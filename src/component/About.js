@@ -5,6 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ReactLogo from '../images/react_logo.png';
 import { makeStyles } from '@material-ui/core/styles';
+import Container from '@material-ui/core/Container';
 
 const useStyles = makeStyles({
     root: {
@@ -40,7 +41,7 @@ function SkillCard(props){
 class About extends Component{
     render(){
         return(
-            <div>
+            <Container>
                 <h1>About</h1>
                 <SkillCard
                     url={ReactLogo} 
@@ -52,7 +53,7 @@ class About extends Component{
                     title="JavaScript"
                     text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
                 />
-            </div>
+            </Container>
         )
     }
 }
