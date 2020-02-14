@@ -1,16 +1,22 @@
-import React,{Component} from 'react';
-import GitHub from '../images/GitHub-Mark-32px.png';
-import Kyash from '../images/Kyash_logo_blue.png';
-import Twitter from '../images/Twitter_Logo_Blue.svg';
-import Amazon from '../images/amazon-brands.svg';
+import React from 'react';
+import GitHub from '../images/GitHub.svg';
+import Kyash from '../images/Kyash.svg';
+import Twitter from '../images/Twitter.svg';
+import Amazon from '../images/Amazon.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Typography } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
     image: {
-        width: 30,
-        height: 30
+        width: 50,
+        height: 50
+    },
+    item: {
+        textAlign: 'center'
+    },
+    content: {
+        padding: 50
     }
 });
 
@@ -23,27 +29,27 @@ function LinkButton(props){
     )
 }
 
-class Contact extends Component{
-    render(){
-        return(
-            <Container>
-                <Typography>Contact</Typography>
-                <Grid container>
-                    <Grid item>
-                        <LinkButton url="https://github.com/shimesaba0218" name={GitHub}/>
-                        <LinkButton url="https://twitter.com/shimesaba0218" name={Twitter}/>
-                    </Grid>
+export default function Contact(){
+    const classes = useStyles();
+    return(
+        <Container className={classes.content} maxWidth="sm">
+            <Grid container spacing={3} justify="center">
+                <Grid item className={classes.item} xs={12}>
+                    <Typography variant="h5">Contact & Donation</Typography>
                 </Grid>
-                <Typography>Donate</Typography>
-                <Grid container>
-                    <Grid item>
+                <Grid item className={classes.item} md={3}>
+                    <LinkButton url="https://github.com/shimesaba0218" name={GitHub}/>
+                </Grid>
+                <Grid item className={classes.item} md={3}>
+                    <LinkButton url="https://twitter.com/shimesaba0218" name={Twitter}/>
+                </Grid>
+                <Grid item className={classes.item} md={3}>
                     <LinkButton url="https://kyash.me/payments/2LMSjkIiQcekeYt69AUNkSNTdtcc" name={Kyash}/>
-                    <LinkButton url="https://www.amazon.jp/hz/wishlist/ls/15CEB9F5WWJSI?ref_=wl_share" name={Amazon}/>
-                    </Grid>
                 </Grid>
-            </Container>
-        )
-    }
+                <Grid item className={classes.item} md={3}>
+                    <LinkButton url="https://www.amazon.jp/hz/wishlist/ls/15CEB9F5WWJSI?ref_=wl_share" name={Amazon}/>
+                </Grid>
+            </Grid>
+        </Container>
+    )
 }
-
-export default Contact;

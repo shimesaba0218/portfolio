@@ -1,69 +1,22 @@
-import React,{Component} from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import ReactLogo from '../images/react_logo.png';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import { Container } from '@material-ui/core';
+import Container from '@material-ui/core/Container';
+import {makeStyles} from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-    root: {
-        maxWidth: 345,
-    },
-    media: {
-        height: 240,
-    },
+    content: {
+        padding: 50
+    }
 });
 
-function SkillCard(props){
+export default function About(){
     const classes = useStyles();
     return(
-        <Card className={classes.root}>
-            <CardMedia
-                className={classes.media}
-                component="img"
-                src={props.url}
-                alt="Contemplative Reptile"
-            />
-            <CardContent>
-                <Typography gutterBottom={true} align="center" variant="h5" component="h2">
-                    {props.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    {props.text}
-                </Typography>
-            </CardContent>
-        </Card>
+        <Container maxWidth='sm' className={classes.content}>
+            <Typography variant='h6'>About Me</Typography>
+            <Typography>花房 亮太(はなふさ りょうた)</Typography>
+            <Typography>津山工業高等専門学校 電子制御工学科 4年(退学予定)</Typography>
+            <Typography>2000年 2月18日</Typography>
+        </Container>
     )
 }
-
-class About extends Component{
-    render(){
-        return(
-            <Container maxWidth='lg'>
-                <Typography variant="h4">About</Typography>
-                <Typography variant="h4">Skill</Typography>
-                <Grid container spacing={3}>
-                    <Grid item md={3}>
-                        <SkillCard
-                            url={ReactLogo} 
-                            title="HTML/CSS"
-                            text="CSS書くのが苦手です…(このポートフォリオではMaterial-UIを使いました)"
-                        />
-                    </Grid>
-                    <Grid item md={3}>
-                        <SkillCard
-                            url={ReactLogo} 
-                            title="JavaScript"
-                            text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
-                        />
-                    </Grid>
-                </Grid>
-            </Container>
-        )
-    }
-}
-
-export default About;
