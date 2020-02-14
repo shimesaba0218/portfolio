@@ -17,6 +17,10 @@ const useStyles = makeStyles({
     image: {
         width: 150,
         height: 150
+    },
+    label: {
+        textTransform: 'capitalize',
+        fontSize: "120%"
     }
 });
 
@@ -28,13 +32,13 @@ export default function NaviBar(){
             <Typography variant="h4" className={classes.title}>Shimesaba0218</Typography>
             <Grid container>
                 <Grid item xs={4}>
-                    <Button fullWidth='true' href='/'>About</Button>
+                    <Button classes={{label: classes.label}} fullWidth='true' href='/'>About Me</Button>
                 </Grid>
                 <Grid item xs={4}>
-                    <Button fullWidth='true' href='/skill'>Skill</Button>
+                    <Button classes={{label: classes.label}} fullWidth='true' href='/skill'>Skill</Button>
                 </Grid>
                 <Grid item xs={4}>
-                    <Button fullWidth='true' href='/contact'>Contact & Donation</Button>
+                    <Button classes={{label: classes.label}} fullWidth='true' href='/contact'>Contact & Donation</Button>
                 </Grid>
             </Grid>
         </div>

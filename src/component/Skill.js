@@ -19,6 +19,10 @@ const useStyles = makeStyles({
     },
     content: {
         padding: 50
+    },
+    title: {
+        marginBottom: 10,
+        textAlign: 'center'
     }
 });
 
@@ -30,7 +34,7 @@ function SkillCard(props){
                 className={classes.media}
                 component="img"
                 src={props.url}
-                alt="Contemplative Reptile"
+                alt=""
             />
             <CardContent>
                 <Typography gutterBottom={true} align="center" variant="h5" component="h2">
@@ -48,7 +52,10 @@ export default function Skill(){
     const classes = useStyles();
     return(
         <Container maxWidth='lg' className={classes.content}>
-            <Grid container spacing={5} justify="center">
+            <Grid container spacing={3} justify="center">
+                <Grid item xs={12}>
+                    <Typography variant='h5' className={classes.title}>Skill</Typography>
+                </Grid>
                 <Grid item md={3}>
                     <SkillCard
                         url={HTML5Logo} 

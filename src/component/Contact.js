@@ -33,7 +33,7 @@ export default function Contact(){
     const classes = useStyles();
     return(
         <Container className={classes.content} maxWidth="sm">
-            <Grid container spacing={3} justify="center">
+            <Grid container spacing={4} justify="center">
                 <Grid item className={classes.item} xs={12}>
                     <Typography variant="h5">Contact & Donation</Typography>
                 </Grid>
@@ -48,6 +48,9 @@ export default function Contact(){
                 </Grid>
                 <Grid item className={classes.item} md={3}>
                     <LinkButton url="https://www.amazon.jp/hz/wishlist/ls/15CEB9F5WWJSI?ref_=wl_share" name={Amazon}/>
+                </Grid>
+                <Grid item xs={12}>
+                    <Typography variant="h6" className={classes.item}>shimesaba0218@gmail.com</Typography>
                 </Grid>
             </Grid>
         </Container>
