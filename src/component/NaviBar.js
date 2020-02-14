@@ -5,33 +5,32 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
-    title: {
+    navibar: {
         textAlign: 'center',
-        backgroundColor: '#f5f5f5'
+        backgroundColor: '#f5f5f5',
+        padding: '10px 0'
     },
-    button: {
-        padding: 2
+    title: {
+        margin: '10px 0'
     }
 });
 
 export default function NaviBar(){
     const classes = useStyles();
     return(
-        <React.Fragment>
-            <div className={classes.title}>
-                <Grid container spacing={2}>
-                    <Grid item xs>
-                        <Button fullWidth={true} href='/'>Home</Button>
-                    </Grid>
-                    <Grid item xs>
-                        <Button fullWidth={true} href='/about'>About</Button>
-                    </Grid>
-                    <Grid item xs>
-                        <Button fullWidth={true} href='/contact'>Contact</Button>
-                    </Grid>
+        <div className={classes.navibar}>
+            <Typography variant="h4" className={classes.title}>Shimesaba0218</Typography>
+            <Grid container>
+                <Grid item xs={4}>
+                    <Button fullWidth='true' href='/'>Home</Button>
                 </Grid>
-                <Typography variant="h4" align='center'>Shimesaba0218</Typography>
-            </div>
-        </React.Fragment>
+                <Grid item xs={4}>
+                    <Button fullWidth='true' href='/about'>About</Button>
+                </Grid>
+                <Grid item xs={4}>
+                    <Button fullWidth='true' href='/contact'>Contact</Button>
+                </Grid>
+            </Grid>
+        </div>
     )
 }

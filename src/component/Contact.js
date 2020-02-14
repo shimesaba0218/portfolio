@@ -4,6 +4,8 @@ import Kyash from '../images/Kyash_logo_blue.png';
 import Twitter from '../images/Twitter_Logo_Blue.svg';
 import Amazon from '../images/amazon-brands.svg';
 import { makeStyles } from '@material-ui/core/styles';
+import { Container, Typography } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
     image: {
@@ -24,14 +26,22 @@ function LinkButton(props){
 class Contact extends Component{
     render(){
         return(
-            <div>
-                <h1>Contact</h1>
-                <LinkButton url="https://github.com/shimesaba0218" name={GitHub}/>
-                <LinkButton url="https://twitter.com/shimesaba0218" name={Twitter}/>
-                <h1>Donate</h1>
-                <LinkButton url="https://kyash.me/payments/2LMSjkIiQcekeYt69AUNkSNTdtcc" name={Kyash}/>
-                <LinkButton url="https://www.amazon.jp/hz/wishlist/ls/15CEB9F5WWJSI?ref_=wl_share" name={Amazon}/>
-            </div>
+            <Container>
+                <Typography>Contact</Typography>
+                <Grid container>
+                    <Grid item>
+                        <LinkButton url="https://github.com/shimesaba0218" name={GitHub}/>
+                        <LinkButton url="https://twitter.com/shimesaba0218" name={Twitter}/>
+                    </Grid>
+                </Grid>
+                <Typography>Donate</Typography>
+                <Grid container>
+                    <Grid item>
+                    <LinkButton url="https://kyash.me/payments/2LMSjkIiQcekeYt69AUNkSNTdtcc" name={Kyash}/>
+                    <LinkButton url="https://www.amazon.jp/hz/wishlist/ls/15CEB9F5WWJSI?ref_=wl_share" name={Amazon}/>
+                    </Grid>
+                </Grid>
+            </Container>
         )
     }
 }

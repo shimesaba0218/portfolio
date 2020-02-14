@@ -5,7 +5,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import ReactLogo from '../images/react_logo.png';
 import { makeStyles } from '@material-ui/core/styles';
-import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import { Container } from '@material-ui/core';
 
 const useStyles = makeStyles({
     root: {
@@ -41,18 +42,25 @@ function SkillCard(props){
 class About extends Component{
     render(){
         return(
-            <Container>
-                <h1>About</h1>
-                <SkillCard
-                    url={ReactLogo} 
-                    title="HTML/CSS"
-                    text="CSS書くのが苦手です…(このポートフォリオではMaterial-UIを使いました)"
-                />
-                <SkillCard
-                    url={ReactLogo} 
-                    title="JavaScript"
-                    text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
-                />
+            <Container maxWidth='lg'>
+                <Typography variant="h4">About</Typography>
+                <Typography variant="h4">Skill</Typography>
+                <Grid container spacing={3}>
+                    <Grid item md={3}>
+                        <SkillCard
+                            url={ReactLogo} 
+                            title="HTML/CSS"
+                            text="CSS書くのが苦手です…(このポートフォリオではMaterial-UIを使いました)"
+                        />
+                    </Grid>
+                    <Grid item md={3}>
+                        <SkillCard
+                            url={ReactLogo} 
+                            title="JavaScript"
+                            text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
+                        />
+                    </Grid>
+                </Grid>
             </Container>
         )
     }
