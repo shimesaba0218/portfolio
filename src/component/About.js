@@ -5,6 +5,7 @@ import {makeStyles} from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import CakeIcon from '@material-ui/icons/Cake';
 import SchoolIcon from '@material-ui/icons/School';
+import BusinessIcon from '@material-ui/icons/Business';
 import PersonIcon from '@material-ui/icons/Person';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 
@@ -36,10 +37,10 @@ export default function About(){
                 </Grid>
                 <Grid item container spacing={3}>
                     <Grid item>
-                        <SchoolIcon />
+                        <BusinessIcon />
                     </Grid>
                     <Grid item xs={12} sm>
-                        <Typography>津山工業高等専門学校 電子制御工学科 4年(退学予定)</Typography>
+                        <Typography>groxi株式会社</Typography>
                     </Grid>
                 </Grid>
                 <Grid item container spacing={3}>
@@ -55,7 +56,7 @@ export default function About(){
                         <FavoriteIcon />
                     </Grid>
                     <Grid item xs={12} sm>
-                        <Typography>ゲーム(FFXIV, Apex Legend), 音楽(Hardbass, GABBA) etc...</Typography>
+                        <Typography>ゲーム(FFXIV, Apex Legends), 音楽(Hardbass, GABBA) etc...</Typography>
                     </Grid>
                 </Grid>
             </Grid>
