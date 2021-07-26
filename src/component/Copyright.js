@@ -19,7 +19,7 @@ export default function Copyright(){
     return(
         <Container maxWidth='false' className={classes.content}>
             <Typography className={classes.text}>Icon by @hsm_hx.</Typography>
-            <Typography className={classes.text}>Copyright © 2020 shimesaba0218.</Typography>
+            <Typography className={classes.text}>© 2020 shimesaba0218.</Typography>
         </Container>
     )
 }
