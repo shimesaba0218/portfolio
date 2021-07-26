@@ -52,12 +52,12 @@ function SkillCard(props){
 export default function Skill(){
     const classes = useStyles();
     return(
-        <Scrollbars>
-            <Container maxWidth='lg' className={classes.content}>
-                <Grid container spacing={3} justify="center">
-                    <Grid item xs={12}>
-                        <Typography variant='h5' className={classes.title}>Skill</Typography>
-                    </Grid>
+        <Container maxWidth='lg' className={classes.content}>
+            <Grid container spacing={3} justify="center">
+                <Grid item xs={12}>
+                    <Typography variant='h5' className={classes.title}>Skill</Typography>
+                </Grid>
+                <Scrollbars style={{ width: 1600, height: 240 }}>
                     <Grid item md={3}>
                         <SkillCard
                             url={HTML5Logo} 
@@ -79,8 +79,8 @@ export default function Skill(){
                             text="VSCode派です。資格はFEくらいしか持ってません…"
                         />
                     </Grid>
-                </Grid>
-            </Container>
-        </Scrollbars>
+                </Scrollbars>
+            </Grid>
+        </Container>
     )
 }
