@@ -9,6 +9,7 @@ import VSCodeLogo from '../images/Visual_Studio_Code_1.35_icon.svg';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import { Container } from '@material-ui/core';
+import Scrollbars from 'react-custom-scrollbars';
 
 const useStyles = makeStyles({
     root: {
@@ -29,22 +30,24 @@ const useStyles = makeStyles({
 function SkillCard(props){
     const classes = useStyles();
     return(
-        <Card className={classes.root}>
-            <CardMedia
-                className={classes.media}
-                component="img"
-                src={props.url}
-                alt=""
-            />
-            <CardContent>
-                <Typography gutterBottom={true} align="center" variant="h5" component="h2">
-                    {props.title}
-                </Typography>
-                <Typography variant="body2" component="p">
-                    {props.text}
-                </Typography>
-            </CardContent>
-        </Card>
+        <Scrollbars>
+            <Card className={classes.root}>
+                <CardMedia
+                    className={classes.media}
+                    component="img"
+                    src={props.url}
+                    alt=""
+                />
+                <CardContent>
+                    <Typography gutterBottom={true} align="center" variant="h5" component="h2">
+                        {props.title}
+                    </Typography>
+                    <Typography variant="body2" component="p">
+                        {props.text}
+                    </Typography>
+                </CardContent>
+            </Card>
+        </Scrollbars>
     )
 }
 
