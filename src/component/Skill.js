@@ -30,57 +30,57 @@ const useStyles = makeStyles({
 function SkillCard(props){
     const classes = useStyles();
     return(
-        <Scrollbars>
-            <Card className={classes.root}>
-                <CardMedia
-                    className={classes.media}
-                    component="img"
-                    src={props.url}
-                    alt=""
-                />
-                <CardContent>
-                    <Typography gutterBottom={true} align="center" variant="h5" component="h2">
-                        {props.title}
-                    </Typography>
-                    <Typography variant="body2" component="p">
-                        {props.text}
-                    </Typography>
-                </CardContent>
-            </Card>
-        </Scrollbars>
+        <Card className={classes.root}>
+            <CardMedia
+                className={classes.media}
+                component="img"
+                src={props.url}
+                alt=""
+            />
+            <CardContent>
+                <Typography gutterBottom={true} align="center" variant="h5" component="h2">
+                    {props.title}
+                </Typography>
+                <Typography variant="body2" component="p">
+                    {props.text}
+                </Typography>
+            </CardContent>
+        </Card>
     )
 }
 
 export default function Skill(){
     const classes = useStyles();
     return(
-        <Container maxWidth='lg' className={classes.content}>
-            <Grid container spacing={3} justify="center">
-                <Grid item xs={12}>
-                    <Typography variant='h5' className={classes.title}>Skill</Typography>
+        <Scrollbars>
+            <Container maxWidth='lg' className={classes.content}>
+                <Grid container spacing={3} justify="center">
+                    <Grid item xs={12}>
+                        <Typography variant='h5' className={classes.title}>Skill</Typography>
+                    </Grid>
+                    <Grid item md={3}>
+                        <SkillCard
+                            url={HTML5Logo} 
+                            title="HTML/CSS"
+                            text="CSS書くのが苦手です…(このポートフォリオではMaterial-UIを使いました)"
+                        />
+                    </Grid>
+                    <Grid item md={3}>
+                        <SkillCard
+                            url={ReactLogo} 
+                            title="JavaScript"
+                            text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
+                        />
+                    </Grid>
+                    <Grid item md={3}>
+                        <SkillCard
+                            url={VSCodeLogo}
+                            title="その他"
+                            text="VSCode派です。資格はFEくらいしか持ってません…"
+                        />
+                    </Grid>
                 </Grid>
-                <Grid item md={3}>
-                    <SkillCard
-                        url={HTML5Logo} 
-                        title="HTML/CSS"
-                        text="CSS書くのが苦手です…(このポートフォリオではMaterial-UIを使いました)"
-                    />
-                </Grid>
-                <Grid item md={3}>
-                    <SkillCard
-                        url={ReactLogo} 
-                        title="JavaScript"
-                        text="Reactがちょっとできたりします。このポートフォリオもReactを使って作成しています。"
-                    />
-                </Grid>
-                <Grid item md={3}>
-                    <SkillCard
-                        url={VSCodeLogo}
-                        title="その他"
-                        text="VSCode派です。資格はFEくらいしか持ってません…"
-                    />
-                </Grid>
-            </Grid>
-        </Container>
+            </Container>
+        </Scrollbars>
     )
 }
